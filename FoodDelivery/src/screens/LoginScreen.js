@@ -29,7 +29,7 @@ export default function LoginScreen({ navigation }) {
 
         <View style={styles.row}>
           <Text style={styles.remember}>Remember me</Text>
-          <Text style={styles.link}>Forgot Password</Text>
+         <Text style={styles.link} onPress={() => navigation.navigate('ForgotPassword')}> Forgot Password </Text>
         </View>
 
         <TouchableOpacity style={styles.button}>
