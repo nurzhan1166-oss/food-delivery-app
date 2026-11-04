@@ -1,17 +1,14 @@
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { colors } from '../theme';
 
-// Кіру экраны (Log In)
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Қою көк тақырып бөлігі */}
       <View style={styles.top}>
         <Text style={styles.title}>Log In</Text>
         <Text style={styles.subtitle}>Please sign in to your existing account</Text>
       </View>
 
-      {/* Ақ карточка: өрістер мен түйме */}
       <View style={styles.form}>
         <Text style={styles.label}>EMAIL</Text>
         <TextInput
@@ -40,7 +37,10 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <Text style={styles.bottomText}>
-          Don't have an account? <Text style={styles.link}>SIGN UP</Text>
+          Don't have an account?{' '}
+          <Text style={styles.link} onPress={() => navigation.navigate('SignUp')}>
+            SIGN UP
+          </Text>
         </Text>
 
         <Text style={styles.or}>Or</Text>
