@@ -14,7 +14,12 @@ export const homeStyles = StyleSheet.create({
   sectionHeader: { flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 22, marginBottom: 15, marginTop: 12 },
   sectionTitle: { color: colors.dark, fontSize: 17, fontWeight: 'bold' },
   seeAll: { color: colors.orange, fontSize: 12 },
-  category: { backgroundColor: '#F4F4F6', padding: 13, borderRadius: 22, marginLeft: 12 },
+
+  // ИСПРАВЛЕНО: список категорий не растягивается по высоте
+  categoryList: { flexGrow: 0, marginBottom: 8 },
+  // ИСПРАВЛЕНО: кнопка категории компактная, а не высокая "таблетка"
+  category: { backgroundColor: '#F4F4F6', paddingVertical: 10, paddingHorizontal: 14, borderRadius: 22, marginLeft: 12, alignSelf: 'flex-start' },
+
   activeCategory: { backgroundColor: colors.orange },
   categoryText: { color: colors.dark, fontSize: 12 },
   activeText: { color: colors.white },

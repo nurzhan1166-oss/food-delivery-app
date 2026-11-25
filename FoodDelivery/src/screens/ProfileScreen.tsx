@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import type { RootStackParamList } from './navigation';
 import BottomBar from './home/BottomBar';
@@ -20,16 +20,16 @@ export default function ProfileScreen({ navigation }: Props) {
             <Text style={s.restaurantType}>Manage your account</Text>
           </View>
         </View>
-        {[
-          ['Personal information', 'No personal information has been added yet.'],
-          ['Delivery addresses', 'Almaty, Kazakhstan'],
-          ['Payment methods', 'No payment methods have been added yet.'],
-          ['Settings', 'Settings are up to date.'],
-        ].map(([label, message]) => (
+        {([
+          ['Personal information', 'PersonalInformation'],
+          ['Delivery addresses', 'DeliveryAddresses'],
+          ['Payment methods', 'PaymentMethods'],
+          ['Settings', 'Settings'],
+        ] as const).map(([label, route]) => (
           <TouchableOpacity
             key={label}
             style={s.profileRow}
-            onPress={() => Alert.alert(label, message)}
+            onPress={() => navigation.navigate(route)}
             accessibilityRole="button"
           >
             <Text style={s.profileRowText}>{label}</Text>
